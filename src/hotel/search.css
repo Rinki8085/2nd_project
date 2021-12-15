@@ -1,0 +1,76 @@
+.heading{
+    background-color:gold;
+    background-image: url("https://i.ibb.co/dcSdWfL/wallpaper2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:94%;
+ }
+
+#logo{
+    background-color: white;
+    height:25%;
+    width:8.5%;
+    border-radius:50%;
+}
+
+
+#locality{
+    text-align:center;
+    font-size:22px;
+    font-weight:bold;
+  }
+  
+  #logo{
+    height:80px;
+    width:80px;
+    border:50%;
+    background-color:white;
+    display:flex;
+    justify-content:center;
+  }
+  
+  #logo>span{
+   padding:10px 0px;
+   color:black;
+   font-size:4vw;
+  }
+  
+  .text{
+    font-size:3vw;
+    font-weight:bold;
+    color:white;
+  }
+  
+  /* Style the navbar */
+  #navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    /* Navbar links */
+    #navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+    }
+    
+    /* Page content */
+    .content {
+      padding: 16px;
+    } 
+  
+  /*--------*/
+  .headings{
+      font-size:35px;
+      font-weight:bold;
+      color:blue;
+      margin-bottom:15px;
+  }
+  
+  .headings:hover{
+      font-style:Italic;
+  }

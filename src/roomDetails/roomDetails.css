@@ -1,0 +1,26 @@
+.hotel-name{
+    color:midnightblue;
+    font-weight:bold;
+}
+
+.details{
+    border:2px solid blue;
+    border-radius:10px;
+    margin-left:10px;
+    height:355px;
+    background-color:powderBlue;
+}
+
+.textsa{
+    margin-left:20px;
+    margin-top:10px;
+    height:243px;
+    font-weight:bold;
+}
+
+.imgs{
+    border-radius:10px;
+    width:100%;
+    height:100%;
+    margin-right:10px;
+}
