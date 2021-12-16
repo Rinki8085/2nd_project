@@ -26,7 +26,6 @@ const Routing = () => {
             <Route path='/hotel_details/:id' component={RoomDetails}/>
             <Route path='/hotel/:restName' component={Booking}/>
             <Route path='/viewPlace' component={BookingApi}/>
-         
         </Router>
     )
 }

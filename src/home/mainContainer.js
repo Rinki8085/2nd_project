@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './mainContainer.css'
+import './mainContainer.css';
+import Footer from '../Footer';
 
 const MainContainer = () => {
     return(
@@ -21,10 +22,10 @@ const MainContainer = () => {
                                     <Link className="nav-link" to='/hotel_list'>Hotel & Resorts</Link>
                                 </li>
                                 <li className="nav-item">
-                                <Link className="nav-link" to='/trips'>Trip Idea</Link>
+                                    <Link className="nav-link" to='/trips'>Trip Idea</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="Booknow.html" className="nav-link">Wallet</a>
+                                    <Link to="/viewPlace" className="nav-link">Wallet</Link>
                                 </li>
                             </ul>
                         </div>
@@ -38,7 +39,7 @@ const MainContainer = () => {
                     </div>
                     <h2 className="font-weight-bold">Choose Your Hotel</h2>
                     <div className="actions">
-                        <a href="booknow.html" className="btn-get-started bg-warning">Book Now</a>
+                        <Link to="/hotel_list" className="btn-get-started bg-warning">Book Now</Link>
                     </div>
                 </div>
             </section>
@@ -254,10 +255,10 @@ const MainContainer = () => {
                     </div>
                     <div className="row justify-content-center ">
                         <div className="col-md-4">
-                            <a href="#variety" className="btn btn-trip d-block">
+                            <Link to="/trips" className="btn btn-trip d-block">
                                 View all places
                                 <i className="fas fa-heart"></i>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -268,46 +269,147 @@ const MainContainer = () => {
                     <h2 className="text-center my-3 mb-3">
                         Testimonial
                     </h2>
-                    <div className="row">
-                        <div className="col-md-4 col-lg-4 col-sm-6 b-3">
-                            <div className="media border p-3 person">
-                                <img src="https://i.ibb.co/4SDV9CQ/testimonial1.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
-                                style={{width:'60px'}}/>
-                                <div className="media-body">
-                                    <h4>John Doe</h4>
-                                    <small><i>Posted on February19,2016</i></small>
-                                    <p>This website is ossum. It's is trustable.</p>
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+  
+                        <ul class="carousel-indicators">
+                        <li data-target="#demo" data-slide-to="0" class="active"></li>
+                        <li data-target="#demo" data-slide-to="1"></li>
+                        <li data-target="#demo" data-slide-to="2"></li>
+                        </ul>
+                                            
+                        <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div className="row">
+                                <div className="col-md-4 col-lg-4 col-sm-6 b-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/4SDV9CQ/testimonial1.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className="col-md-4 col-lg-4 col-sm-6 mb-3">
-                            <div className="media border p-3 person">
-                                <img src="https://i.ibb.co/gT6ddJb/testimonial2.jpg" alt="John Doe" className="mr-3 mt-3 rounded-circle"
-                                style={{width:'60px'}}/>
-                                <div className="media-body">
-                                    <h4>John Doe</h4>
-                                    <small><i>Posted on February19,2016</i></small>
-                                    <p>This website is ossum. It's is trustable.</p>
+                                <div className="col-md-4 col-lg-4 col-sm-6 mb-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/gT6ddJb/testimonial2.jpg" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className="col-md-4 col-lg-4 col-sm-6 b-3">
-                            <div className="media border p-3 person">
-                                <img src="https://i.ibb.co/xSnCwKz/testimonial3.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
-                                style={{width:'60px'}}/>
-                                <div className="media-body">
-                                    <h4>John Doe</h4>
-                                    <small><i>Posted on February19,2016</i></small>
-                                    <p>This website is ossum. It's is trustable.</p>
+                                <div className="col-md-4 col-lg-4 col-sm-6 b-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/xSnCwKz/testimonial3.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
                                 </div>
+                            
                             </div>
                         </div>
-                    
+                        <div class="carousel-item">
+                            <div className="row">
+                                <div className="col-md-4 col-lg-4 col-sm-6 b-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/gT6ddJb/testimonial2.jpg" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-4 col-lg-4 col-sm-6 mb-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/xSnCwKz/testimonial3.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-4 col-lg-4 col-sm-6 b-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/4SDV9CQ/testimonial1.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div className="row">
+                                <div className="col-md-4 col-lg-4 col-sm-6 b-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/4SDV9CQ/testimonial1.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-4 col-lg-4 col-sm-6 mb-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/gT6ddJb/testimonial2.jpg" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="col-md-4 col-lg-4 col-sm-6 b-3">
+                                    <div className="media border p-3 person">
+                                        <img src="https://i.ibb.co/xSnCwKz/testimonial3.png" alt="John Doe" className="mr-3 mt-3 rounded-circle"
+                                        style={{width:'60px'}}/>
+                                        <div className="media-body">
+                                            <h4>John Doe</h4>
+                                            <small><i>Posted on February19,2016</i></small>
+                                            <p>This website is ossum. It's is trustable.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        </div>
+                        
+                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        </a>
                     </div>
                 </div>
             </section>
+            <Footer/>
         </div>
     )
 }

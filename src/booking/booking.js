@@ -20,8 +20,9 @@ class Booking extends Component{
             phone:sessionStorage.getItem('userData')?sessionStorage.getItem('userData').split(',')[2]:'',
             checkIn:'',
             checkOut:'',
-            room:'',
-            adults:'',
+            room:0,
+            adults:0,
+            hello:0,
             amount:'0',
             tdiscount:'700',
             aftdiscount:'0',
@@ -34,22 +35,9 @@ class Booking extends Component{
         this.setState({[event.target.name]:event.target.value});
     }
 
-    handleRoom = (event) => {
-        this.setState({[event.target.name]:event.target.value});
-        var r = Number(this.state.room);
-        if(r>0){
-            var amounts = Number(this.state.amount)+(700*r);
-            var aftdiscounts = amounts+Number(this.state.tdiscount);
-            var taxs = aftdiscounts+Number(this.state.tax)
-            this.setState({amount:amounts,aftdiscount:aftdiscounts,tamount:taxs})
-        }
-    }
-
-    // var a = this.state.adults
-    // var r = this.state.room
-
-    handleAdults = (event) => {
-        this.setState({[event.target.name]:event.target.value});
+    adults = () => {
+        var ad = (this.state.adults)+1;
+        this.setState({adults:ad})
         var a = Number(this.state.adults);
         if(a>2){
             var amountss = Number(this.state.amount)+300;
@@ -58,6 +46,19 @@ class Booking extends Component{
             console.log(amountss,aftdiscountss,taxss)
             this.setState({amount:amountss,aftdiscount:aftdiscountss,tamount:taxss})
         }
+    }
+
+    clicks = () => {
+        var hels = (this.state.room)+1
+        var r = Number(this.state.room);
+        this.setState({room:hels})
+        if(r>0){
+            var amounts = Number(this.state.amount)+700;
+            var aftdiscounts = amounts+Number(this.state.tdiscount);
+            var taxs = aftdiscounts+Number(this.state.tax)
+            this.setState({amount:amounts,aftdiscount:aftdiscounts,tamount:taxs})
+        }
+        console.log(hels)
     }
 
     handleSubmit = () => {
@@ -73,6 +74,7 @@ class Booking extends Component{
             }
         )
         .then(this.props.history.push('/viewPlace'))
+        console.log('ji')
     }
 
     handleSubmission= (event) => {
@@ -131,13 +133,14 @@ class Booking extends Component{
                                         <label><b>Check-Out</b></label>
                                         <input className="form-control" name="checkOut" value={this.state.checkOut} onChange={this.handleChange} type="date"/>
                                     </div>
-                                    <div className="form-group col-sm-2">
-                                        <label><b>Room</b></label>
-                                        <input className="form-control" name="room" value={this.state.room} onChange={this.handleRoom} type="number"/>
-                                    </div>
+                                    
                                     <div className="form-group col-sm-2">
                                         <label><b>Adults</b></label>
-                                        <input className="form-control" name="adults" value={this.state.adults} onChange={this.handleAdults} type="number"/>
+                                        <input className="form-control" name="adults" value={this.state.adults}/><button onClick={this.adults}><i className="fas fa-plus"></i></button>
+                                    </div>
+                                    <div className="form-group col-sm-2">
+                                        <label><b>Room</b></label>
+                                        <input className="form-control" name="room" value={this.state.room}/><button onClick={this.clicks}><i className="fas fa-plus"></i></button>
                                     </div>
                                     <button className="btn btn-warning" onClick={this.handleSubmit}>Submit Details</button>
                                     

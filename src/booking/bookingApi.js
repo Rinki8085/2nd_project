@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import ViewBooking from './viewBooking';
 
@@ -15,8 +16,17 @@ class BookingApi extends Component {
     }
 
     render(){
+        if(!this.state.orders){
+            return(
+                <div>
+                    <h1>Login first to see booking</h1>
+                </div>
+            )
+        }
+        console.log(this.state.orders)
         return(
             <>
+            <Link className="btn btn-danger" to='/'>Go To Home</Link>
             <div className="container">
                 <ViewBooking Order={this.state.orders}/>
             </div>
@@ -27,10 +37,12 @@ class BookingApi extends Component {
 
     // get orders 
     componentDidMount(){
+        if(sessionStorage.getItem('userData')){
         axios.get(`${url}?email=${sessionStorage.getItem('userData').split(',')[1]}`)
         .then((res) => {
             this.setState({orders:res.data})
         })
+        }
     }
 }
 
